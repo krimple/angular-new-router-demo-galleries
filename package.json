@@ -1,0 +1,30 @@
+{
+  "name": "router-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "angular-new-router": "^0.4.0",
+    "gulp": "^3.8.11",
+    "gulp-livereload": "^3.8.0"
+  },
+  "devDependencies": {
+    "gulp-babel": "^4.0.0",
+    "gulp-traceur": "^0.17.0",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.5",
+    "karma-requirejs": "^0.2.2",
+    "livereload": "^0.3.6",
+    "requirejs": "^2.1.16"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
