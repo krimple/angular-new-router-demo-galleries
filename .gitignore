@@ -1,0 +1,8 @@
+node_modules
+*.tmp
+*.swp
+.idea
+*.ipr
+*.ipj
+*.log
+
