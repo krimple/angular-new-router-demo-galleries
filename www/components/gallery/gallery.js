@@ -2,10 +2,11 @@
 	'use strict';
 
 	angular.module('photoreview.galleries.gallery', ['ngMockE2E'])
-	.controller('GalleryController', function($http, $log) {
+	.controller('GalleryController', function($http, $routeParams, $log) {
 		var vm = this;
+		var galleryId = $routeParams['id'];
 		// TODO - extract to service
-		$http.get('/api/v1/galleries/1')
+		$http.get('/api/v1/galleries/' + galleryId)
 		.success(function(data) {
 			vm.gallery = data;
 		})

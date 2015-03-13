@@ -1,0 +1,59 @@
+var gulp = require('gulp');
+var nodemon = require('gulp-nodemon');
+var jshint = require('gulp-jshint');
+var tinylr = require('tiny-lr');
+var mainBowerFiles = require('main-bower-files');
+var babel = require('gulp-babel');
+
+/*function runServer() {
+    console.log('starting server', server);
+    server.bootExpress();
+    console.log('server started');
+}
+
+function rebootServer() {
+    process.emit('reboot', 'now');
+}
+
+*/
+function notifyLiveReload(event) {
+    console.log('notifying', event);
+  var fileName = require('path').relative('./', event.path);
+  console.log('file name is', fileName);
+
+  tinylr.changed({
+    body: {
+      files: [fileName]
+    }
+  });
+}
+
+function startLiveReload() {
+    tinylr = require('tiny-lr')();
+    tinylr.listen(35729);
+}
+
+gulp.task('server', function() {
+ // runServer();
+  startLiveReload();
+  nodemon({
+      script: 'server/app.js',
+      watch: 'server/**/*.*'
+  }).on('start', function() {
+      setTimeout(function() {
+         notifyLiveReload({ path: 'index.html' });
+      });
+  });
+  gulp.watch('src/main/js/**/*.js', ['es6']);
+  gulp.watch(['www/components/**/*.js', 'www/index.html', 'www/components/**/*.html'], notifyLiveReload);
+  gulp.watch('www/lib/**/*.js', notifyLiveReload);
+  gulp.watch('www/*.js', notifyLiveReload);
+  gulp.watch('www/**/*.css', notifyLiveReload);
+});
+
+gulp.task('es6', function() {
+  return gulp.src('src/main/js/**/*.js')
+        .pipe(babel())
+        .pipe(gulp.dest('webapp/lib'));
+});
+

@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <base href="./index.html">
+    <link rel="stylesheet"
+       href="lib/bower_components/angular-material/angular-material.css">
 	<title></title>
 </head>
-<body ng-app='photoreview' ng-controller='AppController as app'>
+<body layout="column" ng-app='photoreview' ng-controller='AppController as app'>
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+       <h1>Gallery App</h1>
+       <a ng-link="galleries">Galleries</a>
+       <a ng-link="gallery({id: 1})">Gallery 1</a>
+   </div>
+    </md-toolbar>
 	<div ng-viewport>stuff goes here</div>
 
 <script src="lib/bower_components/angular/angular.js"></script>
 <script src="lib/bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="lib/bower_components/angular-animate/angular-animate.js"></script>
+<script src="lib/bower_components/angular-aria/angular-aria.js"></script>
+<script src="lib/bower_components/angular-material/angular-material.js"></script>
 <script src="lib/router.es5.js"></script>
 
 <script src="photo-review-app.js"></script>

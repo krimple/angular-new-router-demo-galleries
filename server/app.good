@@ -1,0 +1,49 @@
+var express = require('express');
+var bodyParser = require('body-parser');
+var gracefulExit = require('express-graceful-exit');
+
+module.exports = {
+    bootExpress:  function(){
+        this.app  = express();
+        var EXPRESS_PORT = 4000;
+        var EXPRESS_ROOT = 'www';
+
+        this.app.use(require('connect-livereload')());
+        this.app.use(express.static(EXPRESS_ROOT));
+        this.app.use(gracefulExit.middleware(this.app));
+        var that = this;
+        process.on('reboot', function () {
+            //gracefulExit.gracefulExitHandler(that.app, that.server);
+            //that.app.notify();
+            console.log(that.server);
+            that.bootExpress();
+        });
+        this.app.route('/api/v1/galleries', function(req, res) {
+            fs.readdir('www/content', function(err, files) {
+                console.log('outputting');
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                var result = [];
+                for (var file in files) {
+                    result.push({
+                        id: file,
+                        title: 'Gallery: ' + file,
+                        location: file
+                    });
+                }
+                res.send(res);
+            });
+        });
+        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.urlencoded({
+            extended: true
+        }));
+        this.server = this.app.listen(EXPRESS_PORT, function() {
+            console.log('listening de la port', EXPRESS_PORT);
+        });
+    }
+};
+
+

@@ -2,15 +2,16 @@
 	'use strict';
 
 	angular.module('photoreview', 
-		['ngNewRouter', 'photoreview.galleries', 'photoreview.galleries.gallery'])
+		['photoreview.galleries', 'photoreview.galleries.gallery',
+		  'ngNewRouter', 'ngAnimate', 'ngAria', 'ngMaterial'])
 	.controller('AppController', ['$router', AppController]);
 
 	function AppController($router) {
 		$router.config([
 			{ path: '/', redirectTo: '/galleries' },
 			{ path: '/galleries', component: 'galleries' },
-			{ path: '/galleries/:id', component: 'gallery' }
-			{ path: '/galleries/:galleryId/photo/:photoId', component: 'photo' }
+			{ path: '/gallery/:id', component: 'gallery' }
+			//{ path: '/galleries/:galleryId/photo/:photoId', component: 'photo' }
 		]);
 	}
 }());
