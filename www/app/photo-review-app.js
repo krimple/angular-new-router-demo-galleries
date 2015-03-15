@@ -6,6 +6,9 @@
 		  'photoreview.services',
 		  'ngNewRouter', 'ngAnimate', 'ngAria', 'ngMaterial'])
 	.controller('AppController', ['$router', AppController])
+	.factory('_', function() {
+	    return _;
+    })
     .config(materialConfig)
     .config(componentLoaderConfig)
     .run(function($httpBackend) {
@@ -18,7 +21,8 @@
             // todo - default path - '' is greedy!
 			{ path: '/', redirectTo: '/galleries' },
 			{ path: '/galleries', component: 'galleries' },
-			{ path: '/gallery/:id', component: 'gallery' }
+			{ path: '/gallery/:id', component: 'gallery' },
+            { path: '/gallery/:id/edit', components: { top: 'editGalleryEditPane', bottom: 'gallery'} },
 			//{ path: '/galleries/:galleryId/photo/:photoId', component: 'photo' }
 		]);
 	}

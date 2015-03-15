@@ -1,6 +1,6 @@
 <h2>Galleries</h2>
-<md-card ng-repeat="gallery in galleries.galleries">
-<h2><a ng-link="gallery({ id : $index })">{{ gallery.title}}</a></h2>
+<md-card ng-repeat="gallery in galleries.data">
+    <h2><a ng-link="gallery({ id : $index })">{{ gallery.title}}</a> (<a ng-link="editGallery({ id: $index })">edit</a>)</h2>
     <p>Contains {{ gallery.images.length }} images.</p>
 </md-card>
 

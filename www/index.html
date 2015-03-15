@@ -9,21 +9,24 @@ href="lib/bower_components/angular-material/angular-material.css">
 <md-toolbar layout="row">
 <div class="md-toolbar-tools">
     <span>Gallery App</span>
-    <span flex></span>
-    <span><a ng-link="galleries()">Galleries</a></span>
-    <span flex></span>
-    <span><a ng-link="gallery({id: 1})">Gallery 1</a></span>
 </div>
 </md-toolbar>
 <div flex layout="row">
-    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
-     <ul>
-       <li><a ng-link="galleries()">Galleries</a></li>
-     </ul>
+    <md-sidenav                 md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
+    <div ng-controller="GalleryDataController as data">
+
+        <a ng-link="galleries()">Galleries</a>
+        <ul ng-if="data.galleries.length > 0">
+            <li ng-repeat="gallery in data.galleries">
+              <a ng-link="gallery({ id: $index })">{{ gallery.title }}</a>
+            </li>
+        </ul>
+    </div>
    </md-sidenav>
    <md-content flex id="content"><ng-viewport></ng-viewport></md-content>
 </div>
 
+<script src="lib/bower_components/underscore/underscore.js"></script>
 <script src="lib/bower_components/angular/angular.js"></script>
 <script src="lib/bower_components/angular-mocks/angular-mocks.js"></script>
 <script src="lib/bower_components/angular-animate/angular-animate.js"></script>
@@ -33,6 +36,7 @@ href="lib/bower_components/angular-material/angular-material.css">
 <script src="app/photo-review-app.js"></script>
 <script src="app/components/galleries/galleries.js"></script>
 <script src="app/components/gallery/gallery.js"></script>
+<script src="app/controllers/gallery-data-controller.js"></script>
 <script src="app/services/gallery-repository-service.js"></script>
 </body>
 </html>

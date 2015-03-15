@@ -3,10 +3,10 @@
 
 	angular.module('photoreview.galleries', [])
 	.controller('GalleriesController', function(galleryRepositoryService) {
-		var vm = this;
+		var galleries = this;
 
 		// establish reference
-		vm.galleries = galleryRepositoryService.galleries;
+		galleries.data = galleryRepositoryService.galleries;
 
 	})
 	.run(function($httpBackend, galleryRepositoryService) {
