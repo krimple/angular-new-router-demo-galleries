@@ -14,6 +14,12 @@
   ],
   "dependencies": {
     "angular": "1.4",
-    "angular-mocks": "1.4"
+    "angular-mocks": "1.4",
+    "angular-material": "~0.8.3",
+    "angular-aria": "1.4"
+  },
+  "resolutions": {
+    "angular-aria": "1.4",
+    "angular-animate": "1.4"
   }
 }

@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+<link rel="stylesheet"
+href="lib/bower_components/angular-material/angular-material.css">
+<title></title>
 </head>
-<body ng-app='photoreview' ng-controller='AppController as app'>
-	<div ng-viewport>stuff goes here</div>
+<body layout="column" ng-app='photoreview' ng-controller='AppController as app'>
+<md-toolbar layout="row">
+<div class="md-toolbar-tools">
+    <span>Gallery App</span>
+    <span flex></span>
+    <span><a ng-link="galleries()">Galleries</a></span>
+    <span flex></span>
+    <span><a ng-link="gallery({id: 1})">Gallery 1</a></span>
+</div>
+</md-toolbar>
+<div flex layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
+     <ul>
+       <li><a ng-link="galleries()">Galleries</a></li>
+       <li><a ng-link="gallery({id: 1})">Gallery 1</a></li>
+     </ul>
+   </md-sidenav>
+   <md-content flex id="content"><ng-viewport></ng-viewport></md-content>
+</div>
 
 <script src="lib/bower_components/angular/angular.js"></script>
 <script src="lib/bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="lib/bower_components/angular-animate/angular-animate.js"></script>
+<script src="lib/bower_components/angular-aria/angular-aria.js"></script>
+<script src="lib/bower_components/angular-material/angular-material.js"></script>
 <script src="lib/router.es5.js"></script>
-
-<script src="photo-review-app.js"></script>
-<script src="components/galleries/galleries.js"></script>
-<script src="components/gallery/gallery.js"></script>
+<script src="app/photo-review-app.js"></script>
+<script src="app/components/galleries/galleries.js"></script>
+<script src="app/components/gallery/gallery.js"></script>
+<script src="app/services/gallery-repository-service.js"></script>
 </body>
 </html>
