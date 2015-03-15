@@ -12,9 +12,9 @@ href="lib/bower_components/angular-material/angular-material.css">
 </div>
 </md-toolbar>
 <div flex layout="row">
-    <md-sidenav                 md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')"
+                class="md-whiteframe-z2">
     <div ng-controller="GalleryDataController as data">
-
         <a ng-link="galleries()">Galleries</a>
         <ul ng-if="data.galleries.length > 0">
             <li ng-repeat="gallery in data.galleries">
@@ -28,7 +28,6 @@ href="lib/bower_components/angular-material/angular-material.css">
 
 <script src="lib/bower_components/underscore/underscore.js"></script>
 <script src="lib/bower_components/angular/angular.js"></script>
-<script src="lib/bower_components/angular-mocks/angular-mocks.js"></script>
 <script src="lib/bower_components/angular-animate/angular-animate.js"></script>
 <script src="lib/bower_components/angular-aria/angular-aria.js"></script>
 <script src="lib/bower_components/angular-material/angular-material.js"></script>

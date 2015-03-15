@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	angular.module('photoreview', 
+	angular.module('photoreview',
 		['photoreview.galleries', 'photoreview.galleries.gallery',
 		  'photoreview.services',
 		  'ngNewRouter', 'ngAnimate', 'ngAria', 'ngMaterial'])
@@ -11,10 +11,11 @@
     })
     .config(materialConfig)
     .config(componentLoaderConfig)
-    .run(function($httpBackend) {
-		// fake out the gallery fetch
-		$httpBackend.whenGET(/\/app\/components\//).passThrough();
+	.run(function($httpBackend, galleryRepositoryService) {
+        // initialize data store
+        galleryRepositoryService.loadGalleries();
 	});
+
 
 	function AppController($router) {
 		$router.config([

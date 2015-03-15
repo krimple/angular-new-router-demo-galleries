@@ -1,8 +1,8 @@
 <h2>{{ gallery.data.title }}</h2>
 <hr/>
 <md-card ng-repeat="image in gallery.data.images">
-<md-card-content>
-<h2>{{ image.name }}</h2>
-<p><img src="content/{{ image.path }}"/></p>
-</md-card-content>
+    <md-card-content>
+        <h2>{{ image.name }}</h2>
+        <p><img src="content/{{ image.path }}"/></p>
+    </md-card-content>
 </md-card>

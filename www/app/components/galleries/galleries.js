@@ -12,9 +12,6 @@
 	.run(function($httpBackend, galleryRepositoryService) {
         // initialize data store
         galleryRepositoryService.loadGalleries();
-
-		// fake out the gallery fetch
-		$httpBackend.whenGET(/\/api\/v1\/galleries/).passThrough();
 	});
 
 }());
