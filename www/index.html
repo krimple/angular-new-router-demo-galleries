@@ -18,16 +18,16 @@ href="lib/bower_components/angular-material/angular-material.css">
 <div flex layout="row">
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')"
                 class="md-whiteframe-z2">
-    <div ng-controller="GalleryDataController as data">
+    <md-content flex role="navigation" ng-controller="GalleryDataController as data">
         <a ng-link="galleries()">Galleries</a>
         <ul ng-if="data.galleries.length > 0">
             <li ng-repeat="gallery in data.galleries">
               <a ng-link="gallery({ id: $index })">{{ gallery.title }}</a>
             </li>
         </ul>
-    </div>
+    </md-content>
    </md-sidenav>
-   <md-content flex id="content"><ng-viewport></ng-viewport></md-content>
+   <md-content flex class="md-padding"><ng-viewport></ng-viewport></md-content>
 </div>
 
 <script src="lib/bower_components/underscore/underscore.js"></script>

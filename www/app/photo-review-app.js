@@ -23,7 +23,7 @@
 			{ path: '/', redirectTo: '/galleries' },
 			{ path: '/galleries', component: 'galleries' },
 			{ path: '/gallery/:id', component: 'gallery' },
-            { path: '/gallery/:id/edit', components: { top: 'editGalleryEditPane', bottom: 'gallery'} },
+            { path: '/gallery/:id/edit', component: 'editGallery' }
 			//{ path: '/galleries/:galleryId/photo/:photoId', component: 'photo' }
 		]);
 	}
