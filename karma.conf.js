@@ -10,34 +10,30 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'www/js/**/*.js', included: false},
-      {pattern: 'www/lib/router.es5.js', included: false},
-      {pattern: 'www/lib/bower_components/angular/angular.js', included: false},
-      {pattern: 'www/lib/bower_components/angular-mocks/angular-mocks.js', included: false},
-      {pattern: 'test/spec/**/*.js', included: false}
+      'www/lib/bower_components/angular/angular.js',
+      'www/lib/bower_components/angular-material/angular-material.js',
+      'www/lib/bower_components/angular-animate/angular-animate.js',
+      'www/lib/bower_components/angular-aria/angular-aria.js',
+      'www/lib/bower_components/angular-new-router/dist/router.es5.js',
+      'www/lib/bower_components/angular-mocks/angular-mocks.js',
+      'www/app/photo-review-app.js',
+      'www/app/photo-review-e2e-stub.js',
+      'www/app/controllers/**/*.js',
+      'www/app/services/**/*.js',
+      'www/app/components/**/*.js',
+      'test/mocks/**/*.js',
+      'test/spec/**/*.js'
     ],
-
-
-    // list of files to exclude
-    exclude: [
-    ],
-
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['dots', 'progress'],
 
 
     // web server port
@@ -50,7 +46,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
 
     // enable / disable watching file and executing tests whenever any file changes

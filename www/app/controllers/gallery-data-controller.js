@@ -6,5 +6,3 @@
         vm.galleries = galleryRepositoryService.galleries;
     });
 }());
-
-

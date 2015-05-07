@@ -11,11 +11,13 @@
     })
     .config(materialConfig)
     .config(componentLoaderConfig)
-	.run(function($httpBackend, galleryRepositoryService) {
-        // initialize data store
-        galleryRepositoryService.loadGalleries();
-	});
+	.run(galleryRunFunction);
 
+	function galleryRunFunction($log, $httpBackend, galleryRepositoryService) {
+        // initialize data store
+        $log.debug('initializing store');
+        galleryRepositoryService.loadGalleries();
+	}
 
 	function AppController($router) {
 		$router.config([

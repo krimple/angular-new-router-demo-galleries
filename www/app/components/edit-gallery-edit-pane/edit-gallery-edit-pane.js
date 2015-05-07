@@ -1,4 +1,4 @@
-(function() {
+(function(angular) {
     'use strict';
     angular.module('photoreview.edit-gallery-edit-pane', ['photoreview.edit-gallery-edit-pane'])
     .controller('EditGalleryEditPaneController', function($routeParams, galleryRepositoryService) {
@@ -9,6 +9,6 @@
 
     });
 
-}());
+}(window.angular));
 
 

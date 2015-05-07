@@ -17,7 +17,8 @@
     "angular-mocks": "1.4",
     "angular-material": "~0.9.0",
     "angular-aria": "1.4",
-    "underscore": "~1.8.2"
+    "underscore": "~1.8.2",
+    "angular-new-router": "~0.5.3"
   },
   "resolutions": {
     "angular-aria": "1.4",

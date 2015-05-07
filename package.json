@@ -7,7 +7,6 @@
     "test": "test"
   },
   "dependencies": {
-    "angular-new-router": "^0.4.0",
     "body-parser": "^1.12.0",
     "directory-tree": "^0.1.1",
     "express": "^4.12.2",
@@ -31,9 +30,11 @@
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
     "karma-requirejs": "^0.2.2",
     "livereload": "^0.3.6",
     "main-bower-files": "^2.5.0",
+    "phantomjs": "^1.9.16",
     "requirejs": "^2.1.16",
     "tiny-lr": "^0.1.5"
   },
