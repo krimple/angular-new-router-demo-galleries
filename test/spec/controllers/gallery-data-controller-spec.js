@@ -10,7 +10,7 @@ describe('Gallery Data Controller (for menu)', function() {
                 galleries: mockGalleries
             }
         });
-    })); 
+    }));
 
     it('should possess galleries on the controller instance', function() {
         expect(controller.galleries).toBe(mockGalleries);
