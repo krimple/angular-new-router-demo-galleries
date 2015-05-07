@@ -48,5 +48,4 @@
               return './app/components/' + dashName + '/' + dashName + '.html';
          });
     }
-
 }());

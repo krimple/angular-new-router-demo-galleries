@@ -15,7 +15,7 @@
   "dependencies": {
     "angular": "1.4",
     "angular-mocks": "1.4",
-    "angular-material": "~0.8.3",
+    "angular-material": "~0.9.0",
     "angular-aria": "1.4",
     "underscore": "~1.8.2"
   },
