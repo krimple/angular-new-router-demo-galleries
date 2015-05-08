@@ -22,10 +22,10 @@ module.exports = function(config) {
       'www/lib/bower_components/angular-new-router/dist/router.es5.js',
       'www/lib/bower_components/angular-mocks/angular-mocks.js',
       'www/app/photo-review-app.js',
-      'www/app/photo-review-e2e-stub.js',
-      'www/app/controllers/**/*.js',
       'www/app/services/**/*.js',
-      'www/app/components/**/*.js',
+      'www/app/controllers/**/*.js',
+      'www/app/components/gallery/gallery.js',
+      'www/app/components/galleries/galleries.js',
       'test/mocks/**/*.js',
       'test/spec/**/*.js'
     ],

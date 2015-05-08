@@ -2,9 +2,10 @@
 	'use strict';
 
 	angular.module('photoreview',
-		['photoreview.galleries', 'photoreview.galleries.gallery',
-		  'photoreview.services',
-		  'ngNewRouter', 'ngAnimate', 'ngAria', 'ngMaterial'])
+		['photoreview.galleries',
+		 'photoreview.gallery',
+		 'photoreview.services',
+		 'ngNewRouter', 'ngAnimate', 'ngAria', 'ngMaterial'])
 	.controller('AppController', ['$router', AppController])
 	.factory('_', function() {
 	    return _;
